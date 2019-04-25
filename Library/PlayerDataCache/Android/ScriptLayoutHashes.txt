@@ -2,7 +2,7 @@ Android
 PlayerPath?
 D:/Work/Ping pong/Builds/Ping_pong_apk.apk
 SceneListBegin?
-Assets/Scenes/SampleScene.unity
+Assets/Scenes/Game.unity
 SceneListEnd?
 80d2851602cb4bcb6f559596c5eb955b Assembly-CSharp.dll:Photon.Pun.Demo.Cockpit.PlayerListCell
 71bb6a6b6c8f052f948db64c7dd3ca4f PhotonUnityNetworking.Utilities.dll:Photon.Pun.UtilityScripts.PunTeams

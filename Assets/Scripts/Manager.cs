@@ -126,7 +126,6 @@ public class Manager : MonoBehaviourPunCallbacks
         {
             addElements();
             //Debug.Log("heightMin = " + heightMin + " heightMax = " + heightMax + " widthMin = " + widthMin + " widthMax = " + widthMax);
-
             //Debug.Log("heightMin >= secondHeight && widthMin >= secondWidth");
             heightMax = heightMin;
             heightMin = secondHeight;
@@ -146,11 +145,10 @@ public class Manager : MonoBehaviourPunCallbacks
             heightMax = secondHeight;
             widthMax = secondWidth;
             //Debug.Log("heightMin < secondHeight && widthMin < secondWidth");
-            //float x = widthMin;
         }
 
-        Debug.Log("worldScreenWidth = " + worldScreenWidth.ToString() + ", worldScreenWidthSecond = " + worldScreenWidthSecond);
-        Debug.Log(secondWidth.ToString());
+        //Debug.Log("worldScreenWidth = " + worldScreenWidth.ToString() + ", worldScreenWidthSecond = " + worldScreenWidthSecond);
+        //Debug.Log(secondWidth.ToString());
     }
 
     void Awake()
@@ -162,34 +160,21 @@ public class Manager : MonoBehaviourPunCallbacks
     }
 
 
-	// Update is called once per frame
-	void Update () {
-		if (Input.GetMouseButtonDown (0) && !isStart)
-			isMoveBall = true;
-
-		if (Input.GetMouseButtonDown (0))
-			isMoveRacket = true;
-
-		if (Input.GetMouseButtonUp (0) && !isStart && isMoveRacket) {
-			isStart = true;
-			isMoveBall = false;
-		}
-
-	}
-
-    public override void OnLeftRoom()
+    // Update is called once per frame
+    void Update()
     {
-        photonView.RPC("RestartGame", RpcTarget.All);
-    }
+        if (Input.GetMouseButtonDown(0) && !isStart)
+            isMoveBall = true;
 
-    public override void OnDisconnected(DisconnectCause cause)
-    {
-        photonView.RPC("RestartGame", RpcTarget.All);
-    }
+        if (Input.GetMouseButtonDown(0))
+            isMoveRacket = true;
 
-    private void OnApplicationQuit()
-    {
-        
+        if (Input.GetMouseButtonUp(0) && !isStart && isMoveRacket)
+        {
+            isStart = true;
+            isMoveBall = false;
+        }
+
     }
 
     [PunRPC]

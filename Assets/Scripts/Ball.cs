@@ -48,7 +48,8 @@ public class Ball :  MonoBehaviourPun
     [PunRPC]
     void addSettingsBall(float _rColor, float _gColor, float _bColor)
     {
-        spriteRenderer.color = new Color(_rColor, _gColor, _bColor);
+        if(spriteRenderer != null)
+            spriteRenderer.color = new Color(_rColor, _gColor, _bColor);
     }
 
 
@@ -96,13 +97,6 @@ public class Ball :  MonoBehaviourPun
 	private float hitFactor(Vector2 ballPos, Vector2 racketPos, float racketWidth)
 	{
 		return (ballPos.x - racketPos.x) / racketWidth;
-	}
-
-	// Use this for initialization
-
-	void Update()
-	{
-
 	}
 		
 	public void StartMove()
